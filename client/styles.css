@@ -1,0 +1,37 @@
+body {
+	margin: 0;
+	padding: 0;
+	font-family: sans-serif;
+}
+
+.delBtn {
+	color: black;
+	float: right;
+}
+
+.moreBtn {
+	color: black;
+	float: right;
+}
+
+.putBtn {
+	color: black;
+	float: right;
+}
+
+.editBtn {
+	color: black;
+	float: right;
+}
+
+.postBtn {
+	color: black;
+}
+
+.homeBtn {
+	color: black;
+}
+
+body {
+	background-color: lightslategray;
+}
