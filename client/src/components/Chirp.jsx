@@ -57,8 +57,8 @@ export default class Chirp extends Component {
 						>
 							Edit
 						</button> */}
-							<h5 className="card-title">@{this.state.chirp.user}</h5>
-							<p className="card-text">{this.state.chirp.message}</p>
+							<h5 className="card-title">@{this.state.chirp.userid}</h5>
+							<p className="card-text">{this.state.chirp.text}</p>
 						</div>
 					</div>
 				</div>

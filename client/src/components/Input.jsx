@@ -6,8 +6,8 @@ export default class Input extends Component {
 	constructor(props) {
 		super(props);
 		this.state = {
-			userVal: '',
-			messageVal: '',
+			userid: '',
+			text: '',
 			id: '',
 		};
 	}
@@ -18,20 +18,20 @@ export default class Input extends Component {
 				return res.json();
 			})
 			.then(data => {
-				this.setState({ userVal: this.state.userVal, messageVal: this.state.messageVal, id: data.nextid });
+				this.setState({ userid: this.state.userid, text: this.state.text, id: data.nextid });
 			});
 	}
-	handleUserVal(value) {
-		this.setState({ userVal: value });
+	handleuserid(value) {
+		this.setState({ userid: value });
 	}
 	handleMessageVal(value) {
-		this.setState({ messageVal: value });
+		this.setState({ text: value });
 	}
 	handlePost() {
 		let chirpObj = {
-			user: this.state.userVal,
-			message: this.state.messageVal,
-			id: this.state.id,
+			userid: 1,
+			text: this.state.text,
+			location: 'Somewhere, USA',
 		};
 		fetch('/api/chirps', {
 			method: 'POST',
@@ -60,7 +60,7 @@ export default class Input extends Component {
 						</div>
 						<input
 							onChange={e => {
-								this.handleUserVal(e.target.value);
+								this.handleuserid(e.target.value);
 							}}
 							type="text"
 							className="form-control text-success"

@@ -4,8 +4,8 @@ export default class Update extends Component {
 	constructor(props) {
 		super(props);
 		this.state = {
-			message: '',
-			user: '',
+			text: '',
+			userid: '',
 			id: '',
 		};
 	}
@@ -15,18 +15,18 @@ export default class Update extends Component {
 				return res.json();
 			})
 			.then(chirp => {
-				this.setState({ message: chirp.message, user: chirp.user, id: chirp.id });
+				this.setState({ text: chirp.text, userid: chirp.userid, id: chirp.id });
 			});
 	}
 	handleMessageVal(value) {
-		this.setState({ message: value });
+		this.setState({ text: value });
 	}
 	handlePut() {
 		fetch(`/api/chirps/${this.state.id}`, {
 			method: 'PUT',
 			body: JSON.stringify({
-				user: this.state.user,
-				message: this.state.message,
+				userid: this.state.userid,
+				text: this.state.text,
 				id: this.state.id,
 			}),
 			headers: new Headers({
@@ -56,7 +56,7 @@ export default class Update extends Component {
 							>
 								Save changes
 							</button>
-							<h5 className="card-title">@{this.state.user}</h5>
+							<h5 className="card-title">@{this.state.userid}</h5>
 							{/* <textarea className="card-text">{this.state.message}</p> */}
 							<textarea
 								onChange={e => {
@@ -64,7 +64,7 @@ export default class Update extends Component {
 								}}
 								className="form-control bg-white text-success"
 								aria-label="With textarea"
-								value={`${this.state.message}`}
+								value={`${this.state.text}`}
 								style={{ border: 'solid', borderColor: 'darkgreen' }}
 							/>
 						</div>

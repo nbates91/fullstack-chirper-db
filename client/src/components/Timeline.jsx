@@ -18,12 +18,7 @@ export default class Timeline extends Component {
 				return res.json();
 			})
 			.then(chirps => {
-				console.log('Raw data: ', chirps);
-				let arr = Object.values(chirps);
-				console.log('Raw array: ', arr);
-				arr.pop();
-				console.log('Final updated array: ', arr);
-				this.setState({ chirps: arr });
+				this.setState({ chirps });
 			});
 	}
 
@@ -39,8 +34,8 @@ export default class Timeline extends Component {
 							<Link className="moreBtn btn btn-success" to={`/${chirp.id}`}>
 								...
 							</Link>
-							<h5 className="card-title">@{chirp.user}</h5>
-							<p className="card-text">{chirp.message}</p>
+							<h5 className="card-title">@{chirp.userid}</h5>
+							<p className="card-text">{chirp.text}</p>
 						</div>
 					</div>
 				</React.Fragment>
