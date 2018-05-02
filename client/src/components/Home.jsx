@@ -17,12 +17,12 @@ class Home extends Component {
 						<br />
 						<br />
 
-						<h1 className="display-5">Welcome to Chirper!</h1>
+						<h1 className="shadow display-5">Welcome to Chirper!</h1>
 						<br />
-						<p className="lead text-center">
+						<p className="shadow lead text-center">
 							Share your views with the world.. <br />
 						</p>
-						<p className="lead text-right">...even if the world could care less.</p>
+						<p className="shadow lead text-right">...even if the world could care less.</p>
 					</div>
 				</div>
 				<Timeline />
