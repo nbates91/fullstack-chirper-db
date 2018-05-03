@@ -7,6 +7,7 @@ export default class Update extends Component {
 			text: '',
 			userid: '',
 			id: '',
+			username: '',
 		};
 	}
 	componentDidMount() {
@@ -15,7 +16,7 @@ export default class Update extends Component {
 				return res.json();
 			})
 			.then(chirp => {
-				this.setState({ text: chirp.text, userid: chirp.userid, id: chirp.id });
+				this.setState({ text: chirp.text, userid: chirp.userid, id: chirp.id, username: chirp.username });
 			});
 	}
 	handleMessageVal(value) {
@@ -56,7 +57,7 @@ export default class Update extends Component {
 							>
 								Save changes
 							</button>
-							<h5 className="card-title">@{this.state.userid}</h5>
+							<h5 className="card-title">@{this.state.username}</h5>
 							{/* <textarea className="card-text">{this.state.message}</p> */}
 							<textarea
 								onChange={e => {

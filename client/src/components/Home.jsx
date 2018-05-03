@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import Timeline from './Timeline';
+import birdhouse from '../Assets/Birdhouse.png';
 
 class Home extends Component {
 	render() {
@@ -14,15 +15,19 @@ class Home extends Component {
 							<img src="" alt="" className="rounded" />
 						</div>
 
+						<div className="row">
+							<img src={birdhouse} className="mx-auto d-block" />
+							{/* sourced from http://scribblenauts.wikia.com/wiki/File:Birdhouse.png */}
+						</div>
+
 						<br />
 						<br />
 
-						<h1 className="shadow display-5">Welcome to Chirper!</h1>
+						<h1 className="shadow display-5 text-center">Welcome to Chirper!</h1>
+
 						<br />
-						<p className="shadow lead text-center">
-							Share your views with the world.. <br />
-						</p>
-						<p className="shadow lead text-right">...even if the world could care less.</p>
+
+						<p className="shadow lead text-center">Share your views with the world!</p>
 					</div>
 				</div>
 				<Timeline />

@@ -1,14 +1,14 @@
 import { Router } from 'express';
 import Table from '../table';
+import { callProcedure } from '../config/db';
 
 let router = Router();
 let tableName = new Table('chirps');
 
 router.get('/', (req, res) => {
-	tableName
-		.getAll()
+	callProcedure('spGetChirps')
 		.then(results => {
-			res.json(results);
+			res.json(results[0]);
 		})
 		.catch(err => {
 			console.log(err);
@@ -17,10 +17,11 @@ router.get('/', (req, res) => {
 });
 
 router.get('/:id', (req, res) => {
-	tableName
-		.getOne(req.params.id)
+	// tableName
+	// 	.getOne(req.params.id)
+	callProcedure('spGetChirpUser', [req.params.id])
 		.then(results => {
-			res.json(results);
+			res.json(results[0][0]);
 		})
 		.catch(err => {
 			console.log(err);

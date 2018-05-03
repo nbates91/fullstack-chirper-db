@@ -21,6 +21,7 @@ export default class Chirp extends Component {
 		fetch(`/api/chirps/${id}`, {
 			method: 'DELETE',
 		})
+			.then(location.reload())
 			.then(this.props.history.replace('/'))
 			.then(response => console.log('Success:', response))
 			.catch(error => console.error('Error:', error));
@@ -49,15 +50,8 @@ export default class Chirp extends Component {
 							<Link className="editBtn btn btn-success" to={`/update/${this.state.chirp.id}`}>
 								Edit
 							</Link>
-							{/* <button
-							onClick={() => {
-								this.handlePut(this.state.chirp.id, this.state.chirp.user);
-							}}
-							className="putBtn btn btn-success"
-						>
-							Edit
-						</button> */}
-							<h5 className="card-title">@{this.state.chirp.userid}</h5>
+
+							<h5 className="card-title">@{this.state.chirp.username}</h5>
 							<p className="card-text">{this.state.chirp.text}</p>
 						</div>
 					</div>

@@ -34,8 +34,12 @@ export default class Timeline extends Component {
 							<Link className="moreBtn btn btn-success" to={`/${chirp.id}`}>
 								...
 							</Link>
-							<h5 className="card-title">@{chirp.userid}</h5>
+							<Link className="card-text" to={`/profile/${chirp.userid}`}>
+								@{chirp.username}
+							</Link>
+							{/* <h5 className="card-title">@{chirp.username}</h5> */}
 							<p className="card-text">{chirp.text}</p>
+							<p className="card-text">Posted from: {chirp.location}</p>
 						</div>
 					</div>
 				</React.Fragment>
